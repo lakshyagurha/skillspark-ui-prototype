@@ -4,8 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Trophy, Target, BookOpen, Clock, TrendingUp, Award, Circle } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from "recharts";
+import { Calendar, Trophy, Target, BookOpen, Clock, TrendingUp, Award, Circle, User, Mail, Layers, ListChecks } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Legend } from "recharts";
+import { CardDescription } from "@/components/ui/card";
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -241,9 +242,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-import { User, Mail, Layers, Award, BookOpen, ListChecks } from "lucide-react";
-import {
-  Legend,
-} from "recharts";
-import { CardDescription } from "@/components/ui/card";
