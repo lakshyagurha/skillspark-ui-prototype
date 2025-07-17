@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, Map, User, BookOpen } from "lucide-react";
+import { Home, Map, User, BookOpen, Star } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,12 +17,13 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm border-b">
+    <div className="min-h-screen bg-background star-pattern">
+      <header className="bg-card/80 backdrop-blur-sm shadow-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <Link to="/welcome" className="text-2xl font-bold text-blue-600">
+              <Link to="/welcome" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+                <Star className="h-6 w-6 text-primary fill-primary" />
                 AI Learn
               </Link>
               <nav className="hidden md:flex space-x-6">
@@ -30,8 +31,8 @@ const Layout = ({ children }: LayoutProps) => {
                   to="/roadmap"
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive("/roadmap")
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      ? "bg-primary/20 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                   }`}
                 >
                   <Map size={16} />
@@ -41,8 +42,8 @@ const Layout = ({ children }: LayoutProps) => {
                   to="/module/1"
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive("/module")
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      ? "bg-primary/20 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                   }`}
                 >
                   <BookOpen size={16} />
@@ -52,8 +53,8 @@ const Layout = ({ children }: LayoutProps) => {
                   to="/profile"
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive("/profile")
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      ? "bg-primary/20 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                   }`}
                 >
                   <User size={16} />
@@ -62,9 +63,9 @@ const Layout = ({ children }: LayoutProps) => {
               </nav>
             </div>
             <div className="flex items-center">
-              <Avatar className="h-8 w-8">
+              <Avatar className="h-8 w-8 ring-2 ring-primary/20">
                 <AvatarImage src="/placeholder.svg" />
-                <AvatarFallback>JD</AvatarFallback>
+                <AvatarFallback className="bg-gradient-primary text-white">JD</AvatarFallback>
               </Avatar>
             </div>
           </div>

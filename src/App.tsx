@@ -20,22 +20,24 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/assess/qs/:id" element={<AssessmentQuestion />} />
-          <Route path="/assess/results" element={<AssessmentResults />} />
-          <Route path="/roadmap" element={<Layout><Roadmap /></Layout>} />
-          <Route path="/module/:id" element={<Layout><Module /></Layout>} />
-          <Route path="/module/:id/quiz" element={<Layout><ModuleQuiz /></Layout>} />
-          <Route path="/module/:id/feedback" element={<Layout><ModuleFeedback /></Layout>} />
-          <Route path="/profile" element={<Layout><Profile /></Layout>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="dark">
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/assess/qs/:id" element={<AssessmentQuestion />} />
+            <Route path="/assess/results" element={<AssessmentResults />} />
+            <Route path="/roadmap" element={<Layout><Roadmap /></Layout>} />
+            <Route path="/module/:id" element={<Layout><Module /></Layout>} />
+            <Route path="/module/:id/quiz" element={<Layout><ModuleQuiz /></Layout>} />
+            <Route path="/module/:id/feedback" element={<Layout><ModuleFeedback /></Layout>} />
+            <Route path="/profile" element={<Layout><Profile /></Layout>} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
